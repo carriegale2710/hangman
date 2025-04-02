@@ -1,0 +1,49 @@
+
+
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 800;
+    text-align: center;
+    margin: 5vh;
+}
+
+p {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 200;
+    text-align: center;
+    margin: 2vh;
+    text-overflow: ellipsis;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    height: 100vh;
+}
+
+
+#borderDiv {
+    border: 2px solid grey;
+    border-radius: 12px;
+    max-width: 80vw;
+    max-height: 75vh;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#gameDiv{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 5vh;
+}
+
+button {
+    margin: 2vh;
+}
