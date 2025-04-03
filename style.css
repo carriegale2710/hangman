@@ -47,7 +47,8 @@ p {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    overflow: scroll;
+    scrollbar-width: none;
     padding: 5vw;
     
 }
