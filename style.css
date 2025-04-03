@@ -52,16 +52,25 @@ p {
     display: flex;
     justify-content: center;
     align-content: center;
-    margin: 5vh;
 }
 
-#gameUIDiv {
+#userInputDiv {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
-    margin: 8vw;
+    justify-content: center;
+    margin: 10px;
+    padding: 10px;
+    gap: 10px;
+    width: fit-content;
+}
+
+#userInput {
+    font-family: 'Courier New', Courier, monospace;
+    text-overflow: ellipsis;
+    padding: 5px;
 }
 
 button {
-    margin: 2vh;
+    font-family: 'Courier New', Courier, monospace;
 }
