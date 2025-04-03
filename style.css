@@ -1,10 +1,11 @@
-
+//// This should be styled to support mobile, tablet, and desktop views 
 
 html, body{
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: antiquewhite;
 }
 
 h1 {
@@ -12,10 +13,6 @@ h1 {
     font-weight: 800;
     text-align: center;
     margin-bottom: 5vh;
-}
-
-#lettersLeftDiv {
-    margin: 1vh;
 }
 
 
@@ -55,17 +52,10 @@ p {
     
 }
 
-#hangmanDiv{
+
+.wrapDiv {
     display: flex;
-    justify-content: center;
-    align-content: center;
-}
-
-
-
-#userInputDiv {
-    display: flex;
-    flex-direction: row;
+    flex-direction: coloum;
     flex-wrap: wrap;
     justify-content: center;
     margin: 10px;
@@ -74,11 +64,14 @@ p {
     width: fit-content;
 }
 
-#userInput {
-    font-family: 'Courier New', Courier, monospace;
-    text-overflow: ellipsis;
-    padding: 5px;
+
+#hangmanImg {
+    /* background-image: url("./assets/img/h-8.jpg"); */
+    max-height: 50%;
+    max-width: 50%;
+    
 }
+
 
 button {
     font-family: 'Courier New', Courier, monospace;

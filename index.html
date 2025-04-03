@@ -11,19 +11,22 @@
         <h1>Hangman</h1>
         <div id="borderDiv">
             <!-- remove the letter when input and submitted by user -->
-            <div id="hangmanDiv">
-                <img src="./assets/img/h-9.jpg" alt="hangman">
+            <div class="wrapDiv"  >
+                <img id="hangmanImg" src="./assets/img/h-9.jpg" alt="hangman">
             </div>
-            <div id="userInputDiv">
+            <div class="wrapDiv">
+                <!-- A representation of the word made up of underscore (_) characters should display on the screen. -->
                 <p>__ __ __ __ __ __ __</p>
-                <p>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</p> 
             </div>
-            <div id="userInputDiv">
-                <input id="userInput" type="text" name="userInput" placeholder="Type in your next guess">
-                <button type="submit">Submit</button>
+
+            <div class="wrapDiv">
+                <!-- Create a user interface made up of buttons representing all 26 letters of the alphabet. -->
+                <!-- Clicking a button should register its letter as a 'guess' -->
+                <button id="A" type="button">A</button>
+                <button id="B" type="button">B</button>
+                <button id="C" type="button">C</button>
             </div>
-            
-    </div>
+        </div>
     </div>
     
 </body>
