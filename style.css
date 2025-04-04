@@ -36,7 +36,7 @@ body {
 }
 
 
-#borderDiv {
+main {
     border: 2px solid grey;
     border-radius: 12px;
     max-width: 80%;
@@ -54,7 +54,7 @@ body {
 }
 
 
-.wrapDiv {
+.main__wrapper {
     display: flex;
     flex-direction: coloum;
     flex-wrap: wrap;

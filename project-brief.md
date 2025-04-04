@@ -25,7 +25,7 @@ There are images provided for each stage of the eleven guesses, but feel free to
 - [ ] The game should keep track of which letters have been 'guessed' already.
 - [ ] The game should provide a win or loss message depending on the outcome
 - [ ] There should be some functionality to play again.
-- [ ] This should be styled to support mobile, tablet, and desktop views
+- [x] This should be styled to support mobile, tablet, and desktop views
 
 ## Bonus
 
