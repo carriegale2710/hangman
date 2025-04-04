@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hangman</title>
-    <script src="./script.js"></script>
+    <script src="./script.js" defer type="module"></script>
     <link rel="stylesheet" href="./style.css">
 <body>
     <header>
@@ -15,11 +15,13 @@
         <div class="main main__wrapper">
             <img id="hangmanImg" src="./assets/img/h-9.jpg" alt="hangman">
         </div>
-        <div class="main main__wrapper">
+        <div class="main main__wrapper" id="game-info">
             <!-- A representation of the word made up of underscore (_) characters should display on the screen. -->
             <p id="hidden-word">__ __ __ __ __ __ __</p>
+            <h3 id="game-message">Choose your next guess...</h3>
+            <button id="reset-button">Play again</button>
         </div>
-        <section class="main main__wrapper" id="button-interface" >
+        <section class="main main__wrapper" id="keyboard-buttons" >
             <!-- Create a user interface made up of buttons representing all 26 letters of the alphabet. -->
             <!-- Clicking a button should register its letter as a 'guess' -->
             <button id="A" type="button">A</button>
@@ -49,6 +51,7 @@
             <button id="Y" type="button">Y</button>
             <button id="Z" type="button">Z</button>
         </section>
+        
     </main>
 </body>
 </html>
