@@ -1,6 +1,7 @@
 
 //NOTE - Everything to do with rendering should go here
 
+//TODO - Create a user interface made up of buttons representing all 26 letters of the alphabet.
 
 export const renderKeyboard = (alphabetArr) => {
     const keyboardSection = document.querySelector('#keyboard')
@@ -13,3 +14,7 @@ export const renderKeyboard = (alphabetArr) => {
     });
 }
 
+
+export const ShowResetButton = () => {
+    document.querySelector('#reset-button').classList.remove("hidden");
+}

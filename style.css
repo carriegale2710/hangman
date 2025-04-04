@@ -1,4 +1,4 @@
-//// This should be styled to support mobile, tablet, and desktop views 
+//NOTE - This should be styled to support mobile, tablet, and desktop views 
 
 *{
     box-sizing: border-box;
@@ -95,4 +95,8 @@ button {
     font-size: x-large;
     min-width: 40px;
     min-height: 40px;
+}
+
+.hidden {
+    display: none;
 }
