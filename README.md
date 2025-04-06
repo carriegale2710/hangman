@@ -10,11 +10,11 @@
 This task will require you to create a web based game of [Hangman](https://en.wikipedia.org/wiki/Hangman_\(game\)) using JavaScript.
 This will require understanding of:
 
-- [[Array]]s
-- [[array-iterator]]
-- [[DOM]] manipulation
--  [[Event-listeners]]
-- [[string-manipulation]]
+- Arrays
+- array-iterator
+- DOM manipulation
+- Event-listener
+- string-manipulation
 
 There are images provided for each stage of the eleven guesses, but feel free to use your own if you like. There is a word list provided, feel free to modify it as you see fit.
 
