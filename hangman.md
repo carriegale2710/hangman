@@ -41,19 +41,19 @@ There are images provided for each stage of the eleven guesses, but feel free to
 
 - [ ] //NOTE - If the letter is not in the word, an additional element to the hangman diagram should be added.
     - [x] //TODO there are eleven guesses or 'lives' - so need to keep track of how many INCORRECT guesses have been made 
-    - [ ] //TODO update the image to the next if an incorrect guess is made (event listener?)
+    - [x] //TODO update the image to the next if an incorrect guess is made (event listener?)
 
 - [x] //NOTE - The game should keep track of which letters have been 'guessed' already.
     - [x] //TODO Store letters already guessed in a array to compare with following guesses
 
-- [ ] //NOTE - The game should provide a win or loss message depending on the outcome.
+- [x] //NOTE - The game should provide a win or loss message depending on the outcome.
     //"GAME OVER - Try again?"
     //"GAME WON - Congrats!"
 
 - [x] //NOTE - There should be some functionality to play again.
     - [x] //TODO Create reset button
     - [x] //TODO Hide it until game is over
-    - [ ] //TODO When click, should refresh the game, choose new random word
+    - [x] //TODO When click, should refresh the game, choose new random word
 
 - [x] //NOTE - This should be styled to support mobile, tablet, and desktop views
     - [x] //TODO Make responsive with flexboxes.
