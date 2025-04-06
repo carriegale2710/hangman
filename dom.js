@@ -1,8 +1,6 @@
+//SECTION - Everything to do with rendering should go here
 
-//NOTE - Everything to do with rendering should go here
-
-//TODO - Create a user interface made up of buttons representing all 26 letters of the alphabet.
-
+//NOTE - Create a user interface made up of buttons representing all 26 letters of the alphabet.
 export const renderKeyboard = (alphabetArr) => {
     const keyboardSection = document.querySelector('#keyboard')
     alphabetArr.forEach((letter)=> {
@@ -14,7 +12,11 @@ export const renderKeyboard = (alphabetArr) => {
     });
 }
 
+//NOTE - A representation of the word made up of underscore (_) characters should display on the screen.
 
+
+
+//NOTE - There should be some functionality to play again.
 export const ShowResetButton = () => {
-    document.querySelector('#reset-button').classList.remove("hidden");
+    document.querySelector('#reset-button').classList.remove("hidden"); //refresh button appears 
 }
