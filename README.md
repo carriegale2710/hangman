@@ -1,8 +1,8 @@
 # Hangman
 
 # Notes
-- Project 2 of nology course.
-
+- Project 2 of nology course
+- [Trello Board](https://trello.com/b/1LV8Uym8/hangman)
 
 
 ## Project Outline
