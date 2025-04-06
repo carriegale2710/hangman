@@ -155,27 +155,19 @@ em.innerText = "Emphasised" //add text inside that new el
 newDiv.append(em) //append this new el to the first div
 
 
-
-
 console.log('Hello');
 
-
 // get by id and querySelector with # work more or less the same way
-
 const mainHeadingbyId = document.getElementById('main-heading');
 console.dir(mainHeadingbyId);
 const mainHeadingByQuery = document.querySelector('#main-heading');
 console.dir(mainHeadingByQuery);
 
 
-
 // query selector grabs the first matching element for our query, even if there are multiple
-
 const subHeading = document.querySelector('.sub-heading');
 console.log(subHeading);
-
 const subHeading = document.querySelector('.new-font')
-
 
 // the first paragraph
 console.log(document.querySelector('p'));

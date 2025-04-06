@@ -1,56 +1,61 @@
 //SECTION - Everything to due with the game LOGIC should go here
 
 import {alphabet, words } from "./words.js";
-import {} from "./dom.js";
+import {gameOver, gameWon, revealLettersInWord} from "./dom.js";
 
 //Randomly choose a word to start game
 export const randomWord = (words) => words[Math.floor(Math.random() * words.length)];
-const currentWord = randomWord(words);  //store randomised word here
+export const currentWord = randomWord(words);  //store randomised word here
 console.log(currentWord);
 
-const currentWordArr = currentWord.split('');  //there should be word array 
+export const currentWordArr = currentWord.split('');  //there should be word array 
 console.log(currentWordArr);
 
 //# Load random word as underscores on screen
-const currentWordArrHidden = currentWordArr.map((letter) => '__').join(' ');  //make a copy, hide letters as underscores
+export const currentWordArrHidden = currentWordArr.map((letter) => '__').join(' ');  //make a copy, hide letters as underscores
 document.querySelector('#current-word').innerHTML = currentWordArrHidden;  //loading hidden word to the screen
 
+const hangmanImg = document.querySelector('#hangmanImg');
+console.log(hangmanImg.src);
 
 
-export let numWrongGuesses = 0;
+export let numWrongGuesses = 0; //keep track of wrong guesses
+export const guessedLetters = []; //keep track of letters guessed
+
 
 export const makeGuess = (chosenLetter) => {
     console.log(chosenLetter);
+    
     if (currentWordArr.includes(chosenLetter)) {
         console.log("yes!");
-        //revealLettersInWord();
-        //checkWinCondition();
-    } else if (numWrongGuesses < 9) {
+        guessedLetters.push(chosenLetter);
+        revealLettersInWord(chosenLetter);
+        checkWinCondition(currentWordArr, guessedLetters);
+    } else if (numWrongGuesses < 10) {
         console.log("nope");
         numWrongGuesses++;
-        //showNextHangman();
+        hangmanImg.src = `./assets/img/h-${numWrongGuesses}.jpg`; //next img
     } else {
         console.log("gameOver");
-        //gameOver();
+        gameOver();
+        
     };
 };
 
 
-//gameOver()
+// gameOver() + UI
 // condition: when number of incorrect guesses >= 10
 
-//checkWin condition()
-//condition : all letters are revealed on spaces
+//checkWin condition() -> UI
+//condition : all letters are found in the word 
+    // if  every letter of word in the guessedLetter array, game won.
+
+export const checkWinCondition = (currentWordArr,guessedLetters) => {
+    const letterCorrectlyGuessed = (letter) => guessedLetters.includes(letter);
+    if (currentWordArr.every(letterCorrectlyGuessed)){
+        return gameWon();
+    };
+};
 
 
-
-
-
-//keep track of letters guessed
-
-// export const guessedLetters = [];  
-
-// if (guessedLetters.includes(alphabet[letter])) {
-//     return;
-// }
-// guessedLetters.push(alphabet[letter]);
+// export const gameReset = ()

@@ -31,8 +31,8 @@ There are images provided for each stage of the eleven guesses, but feel free to
 
 - [x] //NOTE - Clicking a button should register its letter as a 'guess'.
     - [x] //TODO remove the letter button that was pressed
-    - [ ] //TODO send the letter to a function called checkLetterExistsInWord()
-    - [ ] //TODO create this function, probably a every() iterator, will return true or false for each element checked
+    - [x] //TODO send the letter to a function called checkLetterExistsInWord()
+    - [ ] //TODO create this function, probably a find() iterator, will return true or false for each element checked
         //if true - replace underscore with the letter, DO NOT increment img number
         //if false - DO increase increment of img number name to change image to next one
 
