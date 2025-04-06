@@ -16,13 +16,14 @@ There are images provided for each stage of the eleven guesses, but feel free to
 
 ## MVP
 
-- [ ] //NOTE -  A game should start with a word being randomly selected.
-    - [ ] //TODO How to import a json array of words into game.js
-    - [ ] //TODO Find a Random number between 0 (first el) and wordsArr.length - 1 (last el).
+- [x] //NOTE -  A game should start with a word being randomly selected.
+    - [x] //TODO How to import a json array of words into game.js
+    - [x] //TODO Find a Random number between 0 (first el) and wordsArr.length - 1 (last el).
+    - call
 
-- [ ] //NOTE - A representation of the word made up of underscore (_) characters should display on the screen.
-    - [ ] //TODO Go thru each letter in word, and transform it into an underscore (use map iterator?)
-    - [ ] //TODO there should be word array and corresponding unsderscore ver of it
+- [x] //NOTE - A representation of the word made up of underscore (_) characters should display on the screen.
+    - [x] //TODO Go thru each letter in word, and transform it into an underscore (use map iterator?)
+    - [x] //TODO there should be word array and corresponding unsderscore ver of it
 
 - [x] //NOTE - Create a user interface made up of buttons representing all 26 letters of the alphabet.
     - [x] //TODO Create alphabet array of all 26 letters
