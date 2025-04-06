@@ -3,7 +3,7 @@
 import { alphabet, words } from "./words.js";
 import { randomWord, currentWordArr, currentWordArrHidden} from "./game.js";
 
-//NOTE - 26 letters as buttons on screen
+//26 letters as buttons on screen
 export const renderKeyboard = (alphabetArr) => {
     const keyboardSection = document.querySelector('#keyboard')
     alphabetArr.forEach((letter)=> {
@@ -18,10 +18,10 @@ export const renderKeyboard = (alphabetArr) => {
 //NOTE (GOT STUCK HERE..)  Replace underscore with letter to reveal if correctly guessed.
     //match letter to word[i], and replace in string array?
     //Make sure all letters are revealed , like double oo and aa
+    //Should I use map() and filter()? or maybe css class to toggle visibility???
 export const revealLettersInWord = (chosenLetter,currentWordArr) => { 
     currentWordArr.map((letter) => chosenLetter == currentWordArr[i]? chosenLetter : "__" );
 };
-
 
 export const gameOver = () => {
     document.querySelector('#game-message').innerHTML = "GAME OVER..";
@@ -33,7 +33,7 @@ export const gameWon = () => {
     ShowResetButton();
 };
 
-//NOTE Reset button appears after game over or win, regardless of outcome.
+//Reset button appears after game over or win, regardless of outcome.
 export const ShowResetButton = () => {
     document.querySelector('#reset-button').classList.remove("hidden"); //refresh button appears 
 }

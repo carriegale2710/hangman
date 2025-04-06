@@ -5,7 +5,6 @@ import {makeGuess} from "./game.js";
 import { renderKeyboard, ShowResetButton} from "./dom.js";
 
 renderKeyboard(alphabet);
-
 document.querySelectorAll('button').forEach((button, key) => {
     button.addEventListener('click', (e) => {
         const chosenLetter = alphabet[key-1].toLowerCase();

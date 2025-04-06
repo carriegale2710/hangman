@@ -11,7 +11,7 @@ console.log(currentWord);
 export const currentWordArr = currentWord.split('');  //there should be word array 
 console.log(currentWordArr);
 
-//# Load random word as underscores on screen
+//Load random word as underscores on screen
 export const currentWordArrHidden = currentWordArr.map((letter) => '__').join(' ');  //make a copy, hide letters as underscores
 document.querySelector('#current-word').innerHTML = currentWordArrHidden;  //loading hidden word to the screen
 
