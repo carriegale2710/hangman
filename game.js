@@ -1,11 +1,10 @@
 //SECTION - Everything to due with the game LOGIC should go here
-import { revealLettersInWord, updateHangmanImg, resetKeyboard, hideSecretWord, endOfGameScreen, changeMessage } from "./dom.js";
 
+import { revealLettersInWord, updateHangmanImg, resetKeyboard, hideSecretWord, endOfGameScreen, changeMessage } from "./dom.js";
 
 let numWrongGuesses = 0; //keep track of wrong guesses
 let guessedLetters = []; //keep track of letters guessed
 let secretWord;
-
 
 
 export const newGame = (words) => {

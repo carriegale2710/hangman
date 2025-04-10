@@ -40,8 +40,8 @@ There are images provided for each stage of the eleven guesses, but feel free to
         //if true - replace underscore with the letter, DO NOT increment img number
         //if false - DO increase increment of img number name to change image to next one
 
-- [ ] //NOTE - If the letter clicked is in the word each underscore corresponding to that letter should be replaced with the letter.
-    - [ ] //TODO match letter to word[i], and replace in string array?
+- [x] //NOTE - If the letter clicked is in the word each underscore corresponding to that letter should be replaced with the letter.
+    - [x] //match letter to word[i], and replace in string array?
 
 - [ ] //NOTE - If the letter is not in the word, an additional element to the hangman diagram should be added.
     - [x] //there are eleven guesses or 'lives' - so need to keep track of how many INCORRECT guesses have been made 
@@ -67,10 +67,18 @@ There are images provided for each stage of the eleven guesses, but feel free to
 
 - [ ] //NOTE - Allow keyboard input
     - [ ] //TODO Find way to link up user key input with each button on screen
+      - // keydown events?
 
 - [ ] //NOTE - Keep track of words that have been used already and display them on the screen
-    - [ ] //TODO  
+    - [ ] //TODO  store in a array or object?
+    - [ ] //TODO display word crossed out on screen?
 
+
+
+# Reflections/Qs/Ideas:
+- When modularising - DOM vs game logic? differences in criteria?
+- How much is modularisation is overkill?
+- parsing in different Json files? - could create difficulty levels with diff word collections? -> external databases?
 
 
     

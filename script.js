@@ -36,10 +36,10 @@ letterButton.forEach((button, key) => {
 // reset the game if reset button is clicked
 const resetButton = document.querySelector('#reset-button');
 resetButton.addEventListener('click', (e) => {
-    // window.location.reload(); //lazy way
+    // window.location.reload(); //lazy way to reload the game - refresh browser
     resetButton.classList.add('hidden'); 
     const makeVisible = (button) => button.classList.remove('hidden');
-    document.querySelectorAll('.letter-button').forEach(makeVisible);
+    document.querySelectorAll('.letter-button').forEach(makeVisible); //show full keyboard again
     // console.log(document.querySelectorAll('.letter-button')); 
     newGame(words);
 });
