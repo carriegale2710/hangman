@@ -1,8 +1,5 @@
 //SECTION - Everything to do with rendering should go here
 
-import { alphabet, words } from "./words.js";
-import { randomWord, currentWordArr, currentWordArrHidden} from "./game.js";
-
 //26 letters as buttons on screen
 export const renderKeyboard = (alphabetArr) => {
     const keyboardSection = document.querySelector('#keyboard')

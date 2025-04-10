@@ -57,13 +57,18 @@ main {
 
 .main__wrapper {
     display: flex;
-    flex-direction: coloum;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     margin: 10px;
     padding: 10px;
     gap: 10px;
     width: fit-content;
+}
+
+#game-info {
+    display: flex;
+    flex-direction: column;
 }
 
 
