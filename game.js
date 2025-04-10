@@ -1,66 +1,60 @@
 //SECTION - Everything to due with the game LOGIC should go here
+import { revealLettersInWord, updateHangmanImg, resetKeyboard, hideSecretWord, endOfGameScreen, resetMessage } from "./dom.js";
+
+
+let numWrongGuesses = 0; //keep track of wrong guesses
+let guessedLetters = []; //keep track of letters guessed
+let secretWord;
 
 
 
+export const newGame = (words) => {
+    resetMessage();
+    secretWord = selectRandomWordFromList(words);
+    console.log(secretWord);
+    hideSecretWord(secretWord);
+    // console.log(secretWord)
+    numWrongGuesses = 0;
+    guessedLetters = [];
+    updateHangmanImg(0);
+    
+    return secretWord;
+};
 
 
-
-import {alphabet, words } from "./assets/words.js";
-import {gameOver, gameWon, revealLettersInWord} from "./dom.js";
-
-
-
-//Randomly choose a word to start game
-export const selectRandomWordFromList = (words) => words[Math.floor(Math.random() * words.length)];
-export const secretWord = selectRandomWordFromList(words);  //store randomised word here
-console.log(secretWord);
-export const secretWordArr = secretWord.split('');  //there should be word array 
-console.log(secretWordArr);
+//Randomly choose a word to start the game
+export const selectRandomWordFromList = (words) => {
+   return words[Math.floor(Math.random() * words.length)].split('');  // randomised word, as array
+};
 
 
-
-
-//keep track of user guesses
-export let numWrongGuesses = 0; //keep track of wrong guesses
-export const guessedLetters = []; //keep track of letters guessed
 
 //when guess made, check if in word (pass) or not in word (fail)
-export const makeGuess = (secretWord, chosenLetter) => {
+export const makeGuess = (chosenLetter) => {
     guessedLetters.push(chosenLetter);
     if (secretWord.includes(chosenLetter)) { //PASS
-        console.log("yes!");
-        revealLettersInWord(secretWord,chosenLetter); //reveal hidden letters   
-    } else { //FAIL
-        console.log("no!");
-        hangmanImg.src = `./assets/img/h-${numWrongGuesses}.jpg`; //next img
-        numWrongGuesses++; //-1 hangman life
+        console.log("correct!");
+        const revealedLettersWord =  revealLettersInWord(secretWord,chosenLetter); //reveal hidden letters   
         
+    } else { //FAIL
+        console.log("incorrect!");
+        numWrongGuesses++; //-1 hangman life
+        hangmanImg.src = `./assets/img/h-${numWrongGuesses}.jpg`; //next img
     };
     IsGameOver();
+    console.log(numWrongGuesses,guessedLetters);
 };
 
 
 
-
+//check if any win or loss conditions are filled (ie. game over)
 export const IsGameOver = () => {
-    if (numWrongGuesses > 10) {  
-        console.log('gameover');
-        endOfGameScreen();
-        // return gameOver();
-    } 
-    // else if (all letters revealed){
-        //console.log("gameOver");
-        //return gameOver();
-    //}
-   
+    if (numWrongGuesses >= 10) {  
+        console.log('gamelose');
+        endOfGameScreen('lose');
+    } else if (secretWord.every((letter) => (guessedLetters.includes(letter)))){
+        console.log('gamewin');
+        endOfGameScreen('win');
+    };
 };
 
-// export const checkWinCondition = (secretWord) => {
-//     const letterCorrectlyGuessed = (letter) => guessedLetters.includes(letter);
-//     if (secretWord.every(letterCorrectlyGuessed)){
-//         endOfGameScreen();
-//     };
-// };
-
-
-// export const gameReset = ()

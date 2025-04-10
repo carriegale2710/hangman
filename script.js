@@ -3,40 +3,43 @@
 //User Flow
 //1. "Has the use guessed a letter?" 
     //YES (Event: user clicks key in keyboard) => makeGuess() 
-        // 2."Has the game finished yet?" (Event: User wins (all letters revealed) or loses (runs out of guesses (11)))
+        // 2."Has the game finished yet?" (Event: User wins (all letters revealed) or loses (runs out of guesses (10)))
             // YES => endOfGame() + showResetButton()
             // 3. "Does the user want to play again?" (Event: user clicks reset button)
                 // YES => 4. startNewGame() + randomiseWord()
 
 
-import {alphabet, words } from "./assets/words.js";
-import {makeGuess} from "./game.js";
-import { resetKeyboard, hideLetterKey, ShowResetButton} from "./dom.js";
+      
+import {  makeGuess, newGame } from "./game.js";  
+import { words} from "./assets/words.js";   
+import { resetKeyboard } from "./dom.js";
+const alphabet = "abcdefghijklmnopqrstuvwxyz".split('');
 
 
+//start or reset the game
+resetKeyboard(alphabet); 
+newGame(words);
 
 
+//NOTE - Event listeners - check if user does something
 
-
-//render the keyboard on screen with alphabet array at start of game
-resetKeyboard(alphabet);
-
-
-//register button click as a guess in game logic and dom UI
-document.querySelectorAll('button').forEach((button, key) => {
+//if a letter key is clicked, register as a guess with that chosen letter
+const letterButton = document.querySelectorAll('button')
+letterButton.forEach((button, key) => {
     button.addEventListener('click', (e) => {
-        const chosenLetter = alphabet[key-1].toLowerCase();
+        const chosenLetter = alphabet[key-1];
         makeGuess(chosenLetter);
-        button.style.visibility = 'hidden'; }); //hide key/button when pressed 
-    });
-
-
-
-
+        button.classList.add('hidden'); //hide key/button when pressed, to avoid repeated guesses
+    }); 
+});
 
 // reset the game if reset button is clicked
-document.querySelector('#reset-button').forEach((button, key) => {
-    button.addEventListener('click', (e) => {
-        window.location.reload();
-        button.style.visibility = 'hidden'; });
+const resetButton = document.querySelector('#reset-button');
+resetButton.addEventListener('click', (e) => {
+    // window.location.reload(); //lazy way
+    resetButton.classList.add('hidden'); 
+    const makeVisible = (button) => button.classList.remove('hidden');
+    document.querySelectorAll('.letter-button').forEach(makeVisible);
+    // console.log(document.querySelectorAll('.letter-button')); 
+    newGame(words);
 });

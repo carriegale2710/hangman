@@ -1,58 +1,65 @@
 //SECTION - Everything to do with rendering should go here
 
 
-//start new Game
-
-
-
-//render 26 letters as buttons on screen
-export const resetKeyboard = () => {
-    const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    console.log(alphabet.length);
+//render 26 letters as buttons on screen as a keyboard
+export const resetKeyboard = (keys) => {
+    // console.log(alphabet.length);
     const keyboardSection = document.querySelector('#keyboard') //blank keys
-    alphabet.split('').forEach((letter)=> { //put one letter on each key
+    keys.forEach((key)=> { //put one letter on each key
         const button = document.createElement('button');
-        const buttonText = document.createTextNode(letter);
+        const buttonText = document.createTextNode(key);
         button.append(buttonText);
-        button.classList.add('button');
+        button.classList.add('letter-button');
         keyboardSection.append(button);
     });
 };
 
-
-//Load random word as underscores on screen
-export const hideSecretWord = () => {
-    secretWordArr.map((letter) => '__').join(' ');  //make a copy, hide letters as underscores       
-    document.querySelector('#current-word').innerHTML = secretWordArrHidden;  //loading hidden word to the screen
+//reset message on screen
+export const resetMessage = () => {
+    document.querySelector('#game-message').innerHTML = "Choose your next guess...";
 }
- 
-export const updateHangmanImg = () => {
+
+//update hangman image 
+export const updateHangmanImg = (num) => {
     const hangmanImg = document.querySelector('#hangmanImg'); // get currently displayed img
-    // console.log(hangmanImg.src);
+    hangmanImg.src = `./assets/img/h-${num}.jpg`;
+}
+
+//Load secret word as underscores on screen
+export const hideSecretWord = (secretWord) => {
+    const secretWordHidden = secretWord.map((letter) => '__').join(' ');  //make a copy, hide letters as underscores       
+    document.querySelector('#current-word').innerHTML = secretWordHidden;  //loading hidden word to the screen
 }
 
 
-
-//NOTE (GOT STUCK HERE..)  Replace underscore with letter to reveal if correctly guessed.
-    //match letter to word[i], and replace in string array?
-    //Make sure all letters are revealed , like double oo and aa
-    //Should I use map() and filter()? or maybe css class to toggle visibility???
-
-
-export const revealLettersInWord = (chosenLetter,currentWordArr) => { 
-    // map - for each letter in the current chosen word array 
-    currentWordArr.map((chosenletter) => chosenLetter == currentWordArr[i]? chosenLetter : "__" ); 
-        //if letter button pushed is included in current chosen word on screen ? 
-            // reveal the letter
-            // : otherwise hide the letter as an underscore
+//Replace underscore with letter to reveal if correctly guessed.
+//Make sure all letters are revealed , like double oo and aa
+export const revealLettersInWord = (secretWord,chosenLetter) => { 
+    let displayStr = document.querySelector('#current-word').innerHTML;
+    const displayStrArr = displayStr.split(' ');
+    for (let i=0; i<=secretWord.length; i++){
+        //match letter to word[i], and replace in string array?
+        if (secretWord[i] == chosenLetter) {
+            displayStrArr[i] = chosenLetter; // reveal the letter
+            // console.log(displayStrArr);
+        };
+    };
+    document.querySelector('#current-word').innerHTML = displayStrArr.join(' ');
+    console.log(displayStr);
+    return displayStr;
 };
 
 
-export const endOfGameScreen = () => {
+//display reset button and end game message based on result
+export const endOfGameScreen = (result) => {
     document.querySelector('#reset-button').classList.remove("hidden"); //Reset button appears after game over or win, regardless of outcome.
-    if (/*game won*/) {
+    const makeHidden = (button) => button.classList.add('hidden');
+    document.querySelectorAll('.letter-button').forEach(makeHidden);
+    if (result === 'lose') {
         document.querySelector('#game-message').innerHTML = "YOU LOSE..";
-    } else {
+    } else if (result === 'win') {
         document.querySelector('#game-message').innerHTML = "YOU WIN!";
-    }
+    } else {
+        console.log("Error determining result");
+    };
 };
