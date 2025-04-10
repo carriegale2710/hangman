@@ -11,19 +11,30 @@
 
 import {alphabet, words } from "./assets/words.js";
 import {makeGuess} from "./game.js";
-import { renderKeyboard, ShowResetButton} from "./dom.js";
-
-//render the keyboard on screen with alphabet array
-renderKeyboard(alphabet);
+import { resetKeyboard, hideLetterKey, ShowResetButton} from "./dom.js";
 
 
+
+
+
+
+//render the keyboard on screen with alphabet array at start of game
+resetKeyboard(alphabet);
+
+
+//register button click as a guess in game logic and dom UI
 document.querySelectorAll('button').forEach((button, key) => {
     button.addEventListener('click', (e) => {
         const chosenLetter = alphabet[key-1].toLowerCase();
         makeGuess(chosenLetter);
-        button.style.visibility = 'hidden'; });
-});
+        button.style.visibility = 'hidden'; }); //hide key/button when pressed 
+    });
 
+
+
+
+
+// reset the game if reset button is clicked
 document.querySelector('#reset-button').forEach((button, key) => {
     button.addEventListener('click', (e) => {
         window.location.reload();
