@@ -15,8 +15,8 @@ export const resetKeyboard = (keys) => {
 };
 
 //reset message on screen
-export const resetMessage = () => {
-    document.querySelector('#game-message').innerHTML = "Choose your next guess...";
+export const changeMessage = (message) => {
+    document.querySelector('#game-message').innerHTML = message ;
 }
 
 //update hangman image 

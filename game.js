@@ -1,5 +1,5 @@
 //SECTION - Everything to due with the game LOGIC should go here
-import { revealLettersInWord, updateHangmanImg, resetKeyboard, hideSecretWord, endOfGameScreen, resetMessage } from "./dom.js";
+import { revealLettersInWord, updateHangmanImg, resetKeyboard, hideSecretWord, endOfGameScreen, changeMessage } from "./dom.js";
 
 
 let numWrongGuesses = 0; //keep track of wrong guesses
@@ -9,7 +9,7 @@ let secretWord;
 
 
 export const newGame = (words) => {
-    resetMessage();
+    changeMessage("Choose your next guess...");
     secretWord = selectRandomWordFromList(words);
     console.log(secretWord);
     hideSecretWord(secretWord);
@@ -34,10 +34,12 @@ export const makeGuess = (chosenLetter) => {
     guessedLetters.push(chosenLetter);
     if (secretWord.includes(chosenLetter)) { //PASS
         console.log("correct!");
-        const revealedLettersWord =  revealLettersInWord(secretWord,chosenLetter); //reveal hidden letters   
+        changeMessage("Correct!");
+        revealLettersInWord(secretWord,chosenLetter); //reveal hidden letters   
         
     } else { //FAIL
         console.log("incorrect!");
+        changeMessage("Not quite..");
         numWrongGuesses++; //-1 hangman life
         hangmanImg.src = `./assets/img/h-${numWrongGuesses}.jpg`; //next img
     };
