@@ -4,6 +4,15 @@
 - Project 2 of nology course
 - [Trello Board](https://trello.com/b/1LV8Uym8/hangman)
 
+# Reflections/Qs/Ideas:
+- updates: fine with handling any css, scss stuff, more about how to design the code for readability/modularity/testing.
+- How much is modularisation is overkill? Best practices? 
+- How to set up modules in efficient way, that still allows for flexibility later on if I want to refactor my code?   
+- When modularising - DOM vs game logic? differences in criteria? How to deal with ambiguous code (break it down more?)
+- Similar to props in react, should any epoxrted code only be imported into the main script.js file? or is it okay for modules to share between themselves? what makes it the code more flexible/less confusing when trying to refactor or moving around code between modules?
+- how to correctly parse in the JSON file -> parsing in different Json files depending on a game level? - could create difficulty levels with diff word collections? -> external databases?
+- Takeaways to implement for the morse code projects (and react projects too)? What's good/on right track vs needs improvement?
+
 
 ## Project Outline
 
@@ -75,10 +84,4 @@ There are images provided for each stage of the eleven guesses, but feel free to
 
 
 
-# Reflections/Qs/Ideas:
-- When modularising - DOM vs game logic? differences in criteria?
-- How much is modularisation is overkill?
-- parsing in different Json files? - could create difficulty levels with diff word collections? -> external databases?
 
-
-    
